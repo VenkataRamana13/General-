@@ -1,0 +1,19 @@
+set number
+set autoindent
+syntax on
+set smartindent
+vmap <C-c> y
+vmap <C-x> x
+" CTRL-V to paste (insert mode)
+imap <C-v> <esc>P
+set clipboard=unnamed
+set clipboard=unnamedplus
+inoremap jj <Esc>
+map ; :
+noremap ;; ;
+colorscheme slate
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set belloff=all
