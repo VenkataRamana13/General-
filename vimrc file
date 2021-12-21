@@ -17,3 +17,4 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set belloff=all
+map <F8> :w <CR> :!gcc % && ./a.out <CR>
