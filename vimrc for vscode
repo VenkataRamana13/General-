@@ -1,0 +1,19 @@
+set number
+set autoindent
+syntax on
+set smartindent
+set clipboard=unnamedplus
+inoremap jj <Esc>
+map ; :
+noremap ;; ;
+colorscheme slate
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set belloff=all
+if has('mouse')
+   set mouse=a
+ endif
+vmap <C-c> "+y
+nnoremap <C-a> ggmqvG"+y'q
