@@ -1,31 +1,15 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'ycm-core/YouCompleteMe'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-set number
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+call vundle#end()
+filetype plugin indent on 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 set autoindent
 syntax on
 set smartindent
@@ -39,12 +23,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set belloff=all
-map <F8> :w<CR>:!g++ % && ./a.out <CR>
-map <F5> <Esc>:w<CR>:!clear;python3 %<CR>
-map <F7> :w<CR>:!g++ -g % && gdb a.out <CR>
-map <F6> :w<CR>:!code %<CR>
-if has('mouse')
-   set mouse=a
- endif
 vmap <C-c> "+y
 nnoremap <C-a> ggmqvG"+y'q
+map <F8> :w<CR>:!g++ -Wall -Wextra % && ./a.out <CR>
+map <F5> :w<CR>:!code %<CR>
