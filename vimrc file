@@ -1,15 +1,18 @@
 set nocompatible
+set number
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'a.vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-call vundle#end()
+Plugin 'jiangmiao/auto-pairs'
 filetype plugin indent on 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+set autoindent
 set autoindent
 syntax on
 set smartindent
