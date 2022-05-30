@@ -8,6 +8,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'preservim/nerdtree'
+call vundle#end()
 filetype plugin indent on 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -28,5 +30,11 @@ set shiftwidth=4
 set belloff=all
 vmap <C-c> "+y
 nnoremap <C-a> ggmqvG"+y'q
+nnoremap <C-t> :NERDTreeToggle<CR>
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 map <F8> :w<CR>:!g++ -Wall -Wextra % && ./a.out <CR>
 map <F5> :w<CR>:!code %<CR>
