@@ -3,7 +3,7 @@ snippet cp "basic template of a cp program"
 using namespace std; 
 
 int main(){
-	ios::sync_with_studio(0); 
+	ios::sync_with_stdio(0); 
 	cin.tie(0);
 
 	//freopen("input.txt", "r", stdin); 
