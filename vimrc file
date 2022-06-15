@@ -4,6 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'a.vim'
+Plugin 'tomasiser/vim-code-dark'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -19,10 +20,10 @@ set autoindent
 syntax on
 set smartindent
 set clipboard=unnamedplus
-inoremap jj <Esc>
+inoremap jk <Esc>
 map ; :
 noremap ;; ;
-colorscheme slate
+colorscheme codedark
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -37,4 +38,5 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 map <F8> :w<CR>:!g++ -Wall -Wextra % && ./a.out <CR>
-map <F5> :w<CR>:!code %<CR>
+map <F5> :w<CR>:!gcc % && ./a.out <CR>
+map <F7> :w<CR>:!python3 % <CR>
